@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<stdbool.h>
 
 int linearSearch(int *arr, int size, int target) {
     //O(n) -> time Complexity
@@ -11,6 +12,12 @@ int linearSearch(int *arr, int size, int target) {
         }
     }
     return -1;
+}
+
+void swap(int* first, int* second) {
+    int temp = *first;
+    *first = *second;
+    *second = temp;
 }
 
 int binarySearch(int *arr, int low, int high, int target) {
@@ -85,7 +92,19 @@ void testBinarySearch() {
     int arr[size], target;
     
     for (size_t i = 0; i < size; i++) {
-        arr[i] = i+1;
+        // arr[i] = i+1;
+        arr[i] = rand();
+    }
+
+    for (int i = 0; i < size-1; i++) {
+        bool swapped = false;
+        for (int j = 0; j < size-1-i; j++) {
+            if(arr[j] > arr[j+1]) {
+                swap(&arr[j], &arr[j+1]);
+                swapped = true;
+            }
+        }
+        if (!swapped) break;
     }
     
     printArray(arr, size);
