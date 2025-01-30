@@ -30,9 +30,23 @@ void bubbleSort(int* arr, int size) {
     }
 }
 
+void selectionSort(int* arr, int size) {
+    for (int i = 0; i < size-1; i++) {
+        int min_index = i;
+        for (int j = i+1; j < size; j++) {
+            if(arr[min_index] > arr[j]) {
+                min_index = j;
+            }
+        }
+        if(min_index != i) {
+            swap(arr+i, arr+min_index);
+        }
+    }
+}
+
 void test() {
     // const int size = rand() % 500;  //0 to 499
-    const int size = 10000;
+    const int size = 100000;
     int *arr = (int *) calloc(size, sizeof(int));
 
     for (int i = 0; i < size; i++) {
@@ -45,8 +59,8 @@ void test() {
     printf("\nSorting started!");
     clock_t start = clock();
     
-    bubbleSort(arr, size);
-    // selectionSort(arr, size);
+    // bubbleSort(arr, size);
+    selectionSort(arr, size);
     // insertionSort(arr, size);
     // quickSort(arr, 0, size-1);
     // merge_sort(arr, size, 0, size-1);
@@ -74,7 +88,7 @@ int main() {
 
 /*
 1. Bubble Sort - 🍋‍🟩
-2. Selection Sort - 
+2. Selection Sort - 🍉
 3. Insertion Sort - 
 4. Quick Sort - 
 5. Merge Sort - 
