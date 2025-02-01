@@ -44,6 +44,20 @@ void selectionSort(int* arr, int size) {
     }
 }
 
+void insertionSort(int* arr, int size) {
+    for(int i=1; i<size; i++) {
+        int j = i-1;    //last Sorted Index
+        int key= arr[i];
+        //move all the elements greater than key to one position
+        while (j >= 0 && key < arr[j]) {
+            arr[j+1] = arr[j];
+            j -= 1;
+        }
+        //find the current position for key
+        arr[j+1] = key;
+    }
+}
+
 void test() {
     // const int size = rand() % 500;  //0 to 499
     const int size = 100000;
@@ -60,8 +74,8 @@ void test() {
     clock_t start = clock();
     
     // bubbleSort(arr, size);
-    selectionSort(arr, size);
-    // insertionSort(arr, size);
+    // selectionSort(arr, size);
+    insertionSort(arr, size);
     // quickSort(arr, 0, size-1);
     // merge_sort(arr, size, 0, size-1);
     
@@ -89,7 +103,7 @@ int main() {
 /*
 1. Bubble Sort - 🍋‍🟩
 2. Selection Sort - 🍉
-3. Insertion Sort - 
+3. Insertion Sort - 🍍
 4. Quick Sort - 
 5. Merge Sort - 
 */
