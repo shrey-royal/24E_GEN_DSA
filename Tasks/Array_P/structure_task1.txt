@@ -1,0 +1,201 @@
+1. Student Database Management:
+   Create a program to manage student records using structures. Each student record should contain information such as name, roll number, and marks. Implement functions to add a new student, display all student records, and search for a student by roll number.
+
+   Sample Input:
+   
+   addStudent("John", 101, 85);
+   addStudent("Alice", 102, 90);
+   displayAllStudents();
+   searchStudent(102);
+   
+
+   Sample Output:
+   
+   Student added successfully.
+   Student added successfully.
+   Student Records:
+   Name: John, Roll Number: 101, Marks: 85
+   Name: Alice, Roll Number: 102, Marks: 90
+   Student Found:
+   Name: Alice, Roll Number: 102, Marks: 90
+   
+
+2. Employee Payroll Management:
+   Develop a program to manage employee details using structures. Each employee record should include attributes such as name, employee ID, and salary. Implement functions to add new employees, calculate monthly salary, and display employee details.
+
+   Sample Input:
+   
+   addEmployee("David", 001, 5000);
+   addEmployee("Emma", 002, 6000);
+   calculateMonthlySalary(001);
+   displayEmployeeDetails(002);
+   
+
+   Sample Output:
+   
+   Employee added successfully.
+   Employee added successfully.
+   Monthly Salary for Employee ID 001: $5000
+   Employee Details:
+   Name: Emma, Employee ID: 002, Salary: $6000
+   
+
+3. Book Inventory Management:
+   Create a program to manage a library's book inventory using structures. Each book should have attributes such as title, author, and quantity available. Implement functions to add new books, update book quantities, and display book details.
+
+   Sample Input:
+   
+   addBook("The Great Gatsby", "F. Scott Fitzgerald", 10);
+   addBook("To Kill a Mockingbird", "Harper Lee", 15);
+   updateBookQuantity("The Great Gatsby", 5);
+   displayBookDetails("To Kill a Mockingbird");
+   
+
+   Sample Output:
+   
+   Book added successfully.
+   Book added successfully.
+   Quantity updated successfully.
+   Book Details:
+   Title: To Kill a Mockingbird, Author: Harper Lee, Quantity Available: 15
+   
+
+4. Bank Account Management:
+   Develop a program to manage bank accounts using structures. Each account should have attributes such as account number, account holder's name, and balance. Implement functions to deposit money, withdraw money, and display account details.
+
+   Sample Input:
+   
+   createAccount("John Doe", 1001, 5000);
+   deposit(1001, 2000);
+   withdraw(1001, 1500);
+   displayAccountDetails(1001);
+   
+
+   Sample Output:
+   
+   Account created successfully.
+   Deposit successful. New Balance: $7000
+   Withdrawal successful. New Balance: $5500
+   Account Details:
+   Account Holder: John Doe, Account Number: 1001, Balance: $5500
+   
+
+5. Rectangle Operations:
+   Write a program to perform operations on rectangles using structures. Each rectangle should have attributes such as length, width, and area. Implement functions to calculate the area of a rectangle, compare two rectangles based on area, and display rectangle details.
+
+   Sample Input:
+   
+   createRectangle(5, 10);
+   createRectangle(3, 8);
+   compareRectangles();
+   displayRectangleDetails(1);
+   
+
+   Sample Output:
+   
+   Rectangle created successfully.
+   Rectangle created successfully.
+   Rectangle 1 has a greater area than Rectangle 2.
+   Rectangle Details:
+   Length: 5, Width: 10, Area: 50
+   
+
+6. Student Grade Calculation:
+   Develop a program to calculate grades for students using structures. Each student should have attributes such as name, marks in different subjects, and grade. Implement functions to calculate the grade based on marks and display student details.
+
+   Sample Input:
+   
+   calculateGrade("Alice", 85, 90, 75);
+   calculateGrade("Bob", 70, 80, 85);
+   displayStudentDetails("Alice");
+   
+
+   Sample Output:
+   
+   Grade calculated successfully.
+   Grade calculated successfully.
+   Student Details:
+   Name: Alice, Marks: {85, 90, 75}, Grade: B
+   
+
+7. Product Inventory Management:
+   Create a program to manage product inventory using structures. Each product should have attributes such as name, price, and quantity available. Implement functions to add new products, update product prices, and display product details.
+
+   Sample Input:
+   
+   addProduct("Laptop", 1000, 20);
+   addProduct("Smartphone", 500, 30);
+   updateProductPrice("Laptop", 1200);
+   displayProductDetails("Smartphone");
+   
+
+   Sample Output:
+   
+   Product added successfully.
+   Product added successfully.
+   Price updated successfully.
+   Product Details:
+   Name: Smartphone, Price: $500, Quantity Available: 30
+   
+
+8. Hospital Patient Management:
+   Develop a program to manage patient records in a hospital using structures. Each patient should have attributes such as name, age, and disease. Implement functions to add new patients, search for patients by disease, and display patient details.
+
+   Sample Input:
+   
+   addPatient("Mary", 35, "Fever");
+   addPatient("John", 45, "Fracture");
+   searchPatientByDisease("Fever");
+   displayPatientDetails("John");
+   
+
+   Sample Output:
+   
+   Patient added successfully.
+   Patient added successfully.
+   Patients with Disease 'Fever':
+   Name: Mary, Age: 35, Disease: Fever
+   Patient Details:
+   Name: John, Age: 45, Disease: Fracture
+   
+
+9. Car Rental System:
+   Write a program to manage a car rental system using structures. Each car should have attributes such as model, make, and rental price per day. Implement functions to add new cars, calculate rental cost based on the number of days, and display car details.
+
+   Sample Input:
+   
+   addCar("Toyota", "Corolla", 50);
+   addCar("Honda", "Civic", 60);
+   calculateRentalCost("Corolla", 3);
+   displayCarDetails("Honda");
+   
+
+   Sample Output:
+   
+   Car added successfully.
+   Car added successfully.
+   Rental Cost for 3 days: $150
+   Car Details:
+   Model: Honda, Make: Civic, Rental Price/Day: $60
+   
+
+10. Employee Information System:
+    Develop a program to manage employee information using structures. Each employee should have attributes such as name, designation, and department. Implement functions to add new employees,
+
+ update employee details, and display employee information.
+
+    Sample Input:
+    
+    addEmployee("Alice", "Manager", "HR");
+    addEmployee("Bob", "Developer", "IT");
+    updateEmployeeDetails("Bob", "Team Lead", "IT");
+    displayEmployeeInformation("Alice");
+    
+
+    Sample Output:
+    
+    Employee added successfully.
+    Employee added successfully.
+    Employee details updated successfully.
+    Employee Information:
+    Name: Alice, Designation: Manager, Department: HR

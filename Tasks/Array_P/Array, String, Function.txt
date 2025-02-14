@@ -1,0 +1,116 @@
+Array, String, Function:
+
+ Question 1: Student Grade Management System
+Test Case 1:  
+- Input:
+  - Student Names: {"John", "Emily", "Michael"}
+  - Student IDs: {101, 102, 103}
+  - Student Grades: {85, 90, 78}
+- Output:
+  - Average Grade: 84.33
+  - Highest Grade: 90
+  - Lowest Grade: 78
+  - Student Information:
+    - Name: John, ID: 101, Grade: 85
+    - Name: Emily, ID: 102, Grade: 90
+    - Name: Michael, ID: 103, Grade: 78
+
+ Question 2: Inventory Management System
+Test Case 2:  
+- Input:
+  - Item Names: {"Apple", "Banana", "Orange"}
+  - Item Quantities: {10, 15, 20}
+  - Item Prices: {1.25, 0.75, 0.95}
+- Output:
+  - Inventory:
+    - Item: Apple, Quantity: 10, Price: $1.25
+    - Item: Banana, Quantity: 15, Price: $0.75
+    - Item: Orange, Quantity: 20, Price: $0.95
+
+ Question 3: Employee Payroll System
+Test Case 3:  
+- Input:
+  - Employee Names: {"Alice", "Bob", "Charlie"}
+  - Employee IDs: {201, 202, 203}
+  - Hourly Rates: {15.50, 18.75, 20.00}
+  - Hours Worked: {40, 45, 50}
+- Output:
+  - Weekly Payroll:
+    - Name: Alice, ID: 201, Weekly Pay: $620.00
+    - Name: Bob, ID: 202, Weekly Pay: $843.75
+    - Name: Charlie, ID: 203, Weekly Pay: $1000.00
+
+ Question 4: Word Frequency Counter
+Test Case 4:  
+- Input:
+  - Text: "The quick brown fox jumps over the lazy dog. The dog barks loudly."
+- Output:
+  - Word Frequencies:
+    - The: 3
+    - quick: 1
+    - brown: 1
+    - fox: 1
+    - jumps: 1
+    - over: 1
+    - lazy: 1
+    - dog: 2
+    - barks: 1
+    - loudly: 1
+
+ Question 5: Social Media Analytics
+Test Case 5:  
+- Input:
+  - Hashtags: {"#programming", "#coding", "#development", "#coding"}
+- Output:
+  - Hashtag Frequencies:
+    - #programming: 1
+    - #coding: 2
+    - #development: 1
+
+ Question 6: Phone Book Application
+Test Case 6:  
+- Input:
+  - Contacts: {"John Doe - 123-456-7890", "Jane Smith - 987-654-3210"}
+- Output:
+  - Phone Book:
+    - John Doe: 123-456-7890
+    - Jane Smith: 987-654-3210
+
+ Question 7: DNA Sequence Analysis
+Test Case 7:  
+- Input:
+  - DNA Sequence: "ATCGATCGATCGATCG"
+- Output:
+  - Complementary Sequence: "TAGCTAGCTAGCTAGC"
+  - GC Content: 50%
+
+ Question 8: Library Management System
+Test Case 8:  
+- Input:
+  - Book Titles: {"Harry Potter", "Lord of the Rings", "The Great Gatsby"}
+  - Authors: {"J.K. Rowling", "J.R.R. Tolkien", "F. Scott Fitzgerald"}
+  - Genres: {"Fantasy", "Fantasy", "Classic"}
+  - Availability: {1, 0, 1} (1 for available, 0 for unavailable)
+- Output:
+  - Library Inventory:
+    - Title: Harry Potter, Author: J.K. Rowling, Genre: Fantasy, Availability: Available
+    - Title: Lord of the Rings, Author: J.R.R. Tolkien, Genre: Fantasy, Availability: Not Available
+    - Title: The Great Gatsby, Author: F. Scott Fitzgerald, Genre: Classic, Availability: Available
+
+ Question 9: Temperature Converter
+Test Case 9:  
+- Input:
+  - Temperature in Fahrenheit: 68
+- Output:
+  - Temperature in Celsius: 20
+
+ Question 10: Text Encryption/Decryption
+Test Case 10:  
+- Input:
+  - Text: "Hello, World!"
+  - Encryption Key: 3
+- Output:
+  - Encrypted Text: "Khoor, Zruog!"
+  - Decrypted Text: "Hello, World!"
+
+These test cases cover various scenarios for each problem, ensuring the correctness and robustness of the implemented solutions.

@@ -1,0 +1,12 @@
+pointers:
+
+1. Implement a function in C that swaps the values of two integers using pointers.
+2. Write a C program to find the maximum element in an array using pointers.
+3. Create a function in C to reverse a string using pointers.
+4. Develop a C program that calculates the sum of elements in a dynamically allocated integer array using pointer arithmetic.
+5. Implement a C function to find the length of a string using pointer arithmetic instead of the standard library function.
+6. Write a C program to sort an array of integers in ascending order using pointers.
+7. Develop a C program that multiplies two matrices using double pointers to represent matrices.
+8. Create a function in C to concatenate two strings using pointers.
+9. Implement a C program to remove duplicate elements from an array using pointers.
+10. Write a C program to implement a simple dynamic memory allocator using double pointers.

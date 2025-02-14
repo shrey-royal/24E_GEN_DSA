@@ -1,0 +1,41 @@
+1. Write a program in C to input a string and print it.
+2. Write a program in C to find the length of a string without using library functions.
+3. Write a program in C to separate individual characters from a string.
+4. Write a program in C to print individual characters of a string in reverse order.
+5. Write a program in C to count the total number of words in a string.
+6. Write a program in C to compare two strings without using string library functions.
+7. Write a program in C to count the total number of alphabets, digits and special characters in a string.
+8. Write a program in C to copy one string to another string.
+9. Write a program in C to count the total number of vowels or consonants in a string.
+10. Write a program in C to find the maximum number of characters in a string.
+11. Write a C program to sort a string array in ascending order.
+12. Write a program in C to read a string from the keyboard and sort it using bubble sort.
+13. Write a program in C to extract a substring from a given string.
+14. Write a C program to check whether a substring is present in a string.
+15. Write a program in C to read a sentence and replace lowercase characters with uppercase and vice versa.
+16. Write a program in C to find the number of times a given word 'the' appears in the given string.
+17. Write a program in C to remove characters from a string except alphabets.
+18. Write a program in C to find the frequency of characters.
+19. Write a program in C to combine two strings manually.
+20. Write a program in C to find the largest and smallest words in a string.
+21. Write a program in C to convert a string to uppercase.
+22. Write a program in C to convert a string to lowercase.
+23. Write a program in C to check whether a character is a Hexadecimal Digit or not.
+24. Write a program in C to check whether a letter is uppercase or not.
+25. Write a program in C to replace the spaces in a string with a specific character.
+26. Write a program in C to count the number of punctuation characters present in a string.
+27. Write a program in C to print only the string before the new line character.
+28. Write a program in C to check whether a letter is lowercase or not.
+29. Write a program in C to read a file and remove the spaces between two words of its content.
+30. Write a program in C to check whether a character is a digit or not.
+31. Write a program in C to split strings by space into words.
+32. Write a C program to find the repeated character in a string.
+33. Write a C program to count each character in a given string.
+34. Write a C program to convert vowels into uppercase characters in a string.
+35. Write a C program to find the length of the longest substring of a given string without repeating characters.
+36. A given string contains the bracket characters '(', ')', '{', '}', '<', ‘>', '[' and ']', Write a C program to check if the string is valid or not. The input string will be valid when open brackets and closed brackets are same type of brackets.
+37. Write a C program to multiply two positive numbers as strings. Return a string representation of the product.
+38. Write a C program to reverse all the vowels present in a given string. Return the newly created string.
+39. Write a C program to find the longest palindromic substring from a given string. Return the substring.
+40. Write a C program to replace each lowercase letter with the same uppercase letter of a given string. Return the newly created string.
+41. Write a C program to calculate the length of the longest common subsequence of two given strings. The strings consist of alphabetical characters.
