@@ -10,7 +10,7 @@ struct Icecream {
     double price;
 };
 
-int main() {
+ic scan() {
     ic obj;
 
     // strcpy(obj.brand, "Havmore");
@@ -20,10 +20,21 @@ int main() {
     strcpy(obj.flavor, "Chocolate");
     obj.price = 100;
 
+    return obj;
+}
+
+void print(ic obj) {
     printf("\nBrand: %s", obj.brand);
     printf("\nName: %s", obj.name);
     printf("\nFlavor: %s", obj.flavor);
     printf("\nPrice: Rs.%.2lf", obj.price);
+}
+
+int main() {
+    ic obj;
+
+    obj = scan();
+    print(obj);
 
     return 0;
 }
