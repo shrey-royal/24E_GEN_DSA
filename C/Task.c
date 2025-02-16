@@ -1,6 +1,5 @@
 #include<stdio.h>
 #include<string.h>
-#include<ctype.h>
 
 #define MAX_WORDS 100
 #define MAX_WORD_LENGTH 50
@@ -11,17 +10,22 @@ typedef struct {
 } WordFrequency;
 
 void toLowerCase(char *str) {
-    for (int i = 0; str[i]; i++) {
-        str[i] = tolower(str[i]);
+    int i=0;
+    while(str[i]) {
+        if (str[i] >= 'A' && str[i] <= 'Z') {
+            str[i] = str[i] + 32;
+        }
+        i++;
     }
 }
 
 void removePunctuation(char *str) {
-    int i, j = 0;
-    for (int i = 0; str[i]; i++) {
-        if (isalpha(str[i]) || isspace(str[i])) {
+    int i = 0, j = 0;
+    while(str[i]) {
+        if ((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z') || str[i] == ' ') {
             str[j++] = str[i];
         }
+        i++;
     }
     str[j] = '\0';
 }
