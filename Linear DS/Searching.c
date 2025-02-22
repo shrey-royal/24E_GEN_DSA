@@ -19,29 +19,42 @@ int binarySearch(int *arr, int low, int high, int target) {
     // O(1) -> space complexity (if recursive without optimization O(log n))
 
     // Recursive Approach
-    // TODO:
+    if(high > low) {
+        int mid = (low + high) / 2;
 
-    // Iterative Approach
-    int count = 0;
-    int mid = (low + high)/2;
-
-    while(arr[mid] != target) {
-        count++;
-        if (low >= high || high < 0) {
-            printf("\nCount = %d\n", count);
-            return -1;
+        if(arr[mid] == target) {
+            return mid;
         }
 
-        //left sub-array
-        if (arr[mid] > target) high = mid-1;
-
-        //right sub-array
-        if (arr[mid] < target) low = mid+1;
-
-        mid = (low + high) / 2;
+        if (arr[mid] > target) {
+            return binarySearch(arr, low, mid-1, target);
+        } else {
+            return binarySearch(arr, mid+1, high, target);
+        }
     }
-    printf("\nCount = %d\n", count);
-    return mid;
+    return -1;
+
+    // Iterative Approach
+    // int count = 0;
+    // int mid = (low + high)/2;
+
+    // while(arr[mid] != target) {
+    //     count++;
+    //     if (low >= high || high < 0) {
+    //         printf("\nCount = %d\n", count);
+    //         return -1;
+    //     }
+
+    //     //left sub-array
+    //     if (arr[mid] > target) high = mid-1;
+
+    //     //right sub-array
+    //     if (arr[mid] < target) low = mid+1;
+
+    //     mid = (low + high) / 2;
+    // }
+    // printf("\nCount = %d\n", count);
+    // return mid;
 }
 
 
