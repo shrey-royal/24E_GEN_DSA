@@ -32,8 +32,22 @@ void bubbleSort(int* arr, int size) {
     }
 }
 
+void selectionSort(int* arr, int size) {
+    for (int i = 0; i < size-1; i++) {
+        int min_index = i;
+        for (int j = i+1; j < size; j++) {
+            if(arr[min_index] > arr[j]) {
+                min_index = j;
+            }
+        }
+        if(min_index != i) {
+            swap(arr+i, arr+min_index);
+        }
+    }
+}
+
 void test() {
-    const int size = 10000;
+    const int size = 10;
     // const int size = rand() % 500;  //0 to 499
     int *arr = (int *) calloc(size, sizeof(int));
 
@@ -41,14 +55,14 @@ void test() {
         arr[i] = (rand() % 100) - 50;   //-50 to 49
     }
 
-    // printf("\nBefore sorting: ");
-    // display(arr, size);
+    printf("\nBefore sorting: ");
+    display(arr, size);
 
     printf("\nSorting started!");
     clock_t start = clock();
     
-    bubbleSort(arr, size);
-    // selectionSort(arr, size);
+    // bubbleSort(arr, size);
+    selectionSort(arr, size);
     // insertionSort(arr, size);
     // quickSort(arr, 0, size-1);
     // merge_sort(arr, size, 0, size-1);
@@ -57,10 +71,10 @@ void test() {
     
     double time_taken = ((double)(end - start)) / CLOCKS_PER_SEC;
     
-    // printf("\nAfter sorting: ");
-    // display(arr, size);
+    printf("\nAfter sorting: ");
+    display(arr, size);
 
-    printf("\nBubble sort took %.4f seconds to sort %d elements.\n", time_taken, size);
+    printf("\nAlgorithm took %.4f seconds to sort %d elements.\n", time_taken, size);
 
     for (int i = 0; i < size-1; i++) {
         assert(arr[i] <= arr[i+1]);
