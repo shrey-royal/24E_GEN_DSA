@@ -98,8 +98,46 @@ void quickSort(int arr[], int lower, int upper) {
     }
 }
 
+/*
+    @brief Perform merge of segments.
+    @param a array to sort
+    @param l left index for merge
+    @param m mid index of the array
+    @param r right index for merge
+ */
+void merge(int *a, int l, int m, int r) {
+    int left_size = m - l + 1, right_size = r - m;
+    int left[left_size], right[right_size];
+
+    for(int i=0; i<left_size; i++) left[i] = a[l + i];
+    for(int i=0; i<right_size; i++) right[i] = a[m + 1 + i];
+
+    int i=0, j=0, k=l;
+    while (i < left_size && j < right_size)
+        a[k++] = (left[i] <= right[j]) ? left[i++] : right[j++];
+
+    while (i < left_size) a[k++] = left[i++];
+    while (j < right_size) a[k++] = right[j++];
+}
+
+
+/*  Merge sort algorithm implementation
+    @param a array to sort
+    @param l index to sort from
+    @param r index to sort till
+*/
+void merge_sort(int *a, int l, int r) {
+    if (l < r) {
+        int m = (l + r) / 2;
+        merge_sort(a, l, m);
+        merge_sort(a, m+1, r);
+        merge(a, l, m, r);
+    }
+}
+
+
 void test() {
-    const int size = 10000;
+    const int size = 1000000;
     // const int size = rand() % 500;  //0 to 499
     int *arr = (int *) calloc(size, sizeof(int));
 
@@ -116,8 +154,8 @@ void test() {
     // bubbleSort(arr, size);
     // selectionSort(arr, size);
     // insertionSort(arr, size);
-    quickSort(arr, 0, size-1);
-    // merge_sort(arr, size, 0, size-1);
+    // quickSort(arr, 0, size-1);
+    merge_sort(arr, 0, size-1);
     
     clock_t end = clock();
     
