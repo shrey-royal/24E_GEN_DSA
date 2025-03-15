@@ -24,6 +24,25 @@ void insertAtBeginning(struct Node** head, int data) {
     *head = newNode;
 }
 
+void insertAtEnd(struct Node** head, int data) {
+    struct Node* newNode = createNode(data);
+
+    if (*head == NULL) {
+        *head = newNode;
+        return;
+    }
+
+    struct Node* last = *head;
+    while(last->next != NULL) last = last->next;
+    last->next = newNode;
+}
+
+void insertAtPosition(struct Node** head, int data, int position) {
+    if (position < 1) {
+        //
+    }
+}
+
 void printList(struct Node* head) {
     printf("\nList: ==> ");
     while (head != NULL) {
@@ -33,6 +52,7 @@ void printList(struct Node* head) {
     printf("NULL\n");
 }
 
+// Input: 2 22 2 23 2 24 2 25 2 26 2 27 1 21
 int main() {
     int choice, data;
     struct Node* head = NULL;
@@ -61,6 +81,12 @@ int main() {
                 printf("\nEnter the data: ");
                 scanf("%d", &data);
                 insertAtBeginning(&head, data);
+                break;
+
+            case 2:
+                printf("\nEnter the data: ");
+                scanf("%d", &data);
+                insertAtEnd(&head, data);
                 break;
 
             case 10:
