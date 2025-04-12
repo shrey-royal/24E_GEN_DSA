@@ -93,7 +93,23 @@ node deleteAtFront(node head) {
 }
 
 node deleteAtEnd(node head) {
-    //TODO
+    if (head == NULL) {
+        printf("\nList is already empty. Nothing to delete.\n");
+        return NULL;
+    }
+
+    node curr = head;
+    while(curr->next->next != NULL) {
+        curr = curr->next;
+    }
+    node temp = curr->next;
+    curr->next = NULL;
+    free(temp);
+    return head;
+}
+
+node deleteAtPosition(node head, int position) {
+    // TODO
 }
 
 void printForward(node head) {
@@ -145,7 +161,7 @@ int main() {
 
     printForward(list);
 
-    list = deleteAtFront(list);
+    list = deleteAtEnd(list);
     
     printForward(list);
     // printAddr(list);
