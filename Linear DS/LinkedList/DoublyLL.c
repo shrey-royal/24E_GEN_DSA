@@ -52,6 +52,50 @@ node insertAtEnd(node head, int data) {
     return head;
 }
 
+node insertAtPosition(node head, int data, int position) {
+    if (position == 1 || head == NULL) {
+        return insertAtFront(head, data);
+    }
+
+    node newNode = createNode(data);
+    node curr = head;
+    int currentPosition = 1;
+
+    while (curr != NULL && currentPosition < position - 1) {
+        curr = curr->next;
+        currentPosition++;
+    }
+
+    newNode->next = curr->next;
+    newNode->prev = curr;
+    if (curr->next != NULL) {
+        curr->next->prev = newNode;
+    }
+    curr->next = newNode;
+
+    return head;
+}
+
+node deleteAtFront(node head) {
+    if (head == NULL) {
+        printf("\nList is already empty. Nothing to delete.\n");
+        return NULL;
+    }
+
+    node temp = head;
+    head = head->next;
+
+    if (head != NULL) {
+        head->prev = NULL;
+    }
+    free(temp);
+    return head;
+}
+
+node deleteAtEnd(node head) {
+    //TODO
+}
+
 void printForward(node head) {
     printf("\nList > \tNULL <-> ");
     while(head != NULL) {
@@ -95,6 +139,14 @@ int main() {
     list = insertAtEnd(list, 19);
     list = insertAtEnd(list, 20);
 
+    
+    list = insertAtPosition(list, 121, 11);
+    // list = insertAtPosition(list, 12);
+
+    printForward(list);
+
+    list = deleteAtFront(list);
+    
     printForward(list);
     // printAddr(list);
 }
