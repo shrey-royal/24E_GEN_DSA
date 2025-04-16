@@ -109,7 +109,57 @@ node deleteAtEnd(node head) {
 }
 
 node deleteAtPosition(node head, int position) {
-    // TODO
+    if (head == NULL) {
+        printf("\nList is already empty. Nothing to delete.\n");
+        return NULL;
+    }
+
+    if (position == 1) {
+        return deleteAtFront(head);
+    }
+
+    node curr = head;
+    int currentPosition = 1;
+
+    while (curr != NULL && currentPosition < position) {
+        curr = curr->next;
+        currentPosition++;
+    }
+
+    if (curr == NULL) {
+        printf("\nPosition %d does not exist in the list.\n", position);
+        return head;
+    }
+
+    if (curr->prev != NULL) {
+        curr->prev->next = curr->next;
+    }
+    
+    if (curr->next != NULL) {
+        curr->next->prev = curr->prev;
+    }
+
+    free(curr);
+    return head;
+}
+
+int getLength(node head) {
+    int length = 0;
+    while (head != NULL) {
+        length++;
+        head = head->next;
+    }
+    return length;
+}
+
+node reverseList(node head) {
+    //
+    return head;
+}
+
+int searchByValue(node head, int value) {
+    //
+    return -1;
 }
 
 void printForward(node head) {
@@ -161,7 +211,8 @@ int main() {
 
     printForward(list);
 
-    list = deleteAtEnd(list);
+    // list = deleteAtEnd(list);
+    list = deleteAtPosition(list, 6);
     
     printForward(list);
     // printAddr(list);
