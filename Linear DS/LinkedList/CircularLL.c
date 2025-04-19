@@ -37,6 +37,14 @@ node* insertAtPosition(node* head, int data, int position) {
     // TODO
 }
 
+node* deleteAtFirst(node* head) {
+    // TODO
+}
+
+node* deleteAtEnd(node* head) {
+    // TODO
+}
+
 void print(node* head) {
     if (head == NULL) {
         printf("\nList is empty!\n");
