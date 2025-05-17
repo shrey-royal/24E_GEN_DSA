@@ -37,6 +37,69 @@ void enqueueFront(struct Deque *dq, int value) {
     dq->items[dq->front] = value;
 }
 
+void enqueueRear(struct Deque *dq, int value) {
+    if (isFull(dq)) {
+        printf("\nDeque is full");
+        return;
+    }
+    if (isEmpty(dq)) {
+        dq->front = dq->rear = 0;
+    } else if(dq->rear == MAX_SIZE - 1) {
+        dq->rear = 0;
+    } else {
+        dq->rear++;
+    }
+    dq->items[dq->rear] = value;
+}
+
+void dequeueFront(struct Deque *dq) {
+    if (isEmpty(dq)) {
+        printf("\nDeque is empty!");
+        return;
+    }
+    printf("\nDequeued from front: %d", dq->items[dq->front]);
+
+    if (dq->front == dq->rear) {
+        dq->front = dq->rear = -1;
+    } else if (dq->front == MAX_SIZE - 1) {
+        dq->front = 0;
+    } else {
+        dq->front++;
+    }
+}
+
+void dequeueRear(struct Deque *dq) {
+    if (isEmpty(dq)) {
+        printf("\nDeque is empty!");
+        return;
+    }
+    printf("\nDequeued from rear: %d", dq->items[dq->rear]);
+
+    if (dq->front == dq->rear) {
+        dq->front = dq->rear = -1;
+    } else if (dq->rear == 0) {
+        dq->rear = MAX_SIZE - 1;
+    } else {
+        dq->rear--;
+    }
+}
+
+int peekFront(struct Deque *dq) {
+    if (isEmpty(dq)) {
+        printf("\nDeque is empty!");
+        return -1;
+    }
+    return dq->items[dq->front];
+}
+
+int peekRear(struct Deque *dq) {
+    if (isEmpty(dq)) {
+        printf("\nDeque is empty!");
+        return -1;
+    }
+    return dq->items[dq->rear];
+}
+
 void display(struct Deque *dq) {
     if (isEmpty(dq)) {
         printf("\nDeque is empty");
@@ -52,7 +115,6 @@ void display(struct Deque *dq) {
     }
     printf("\n");
 }
-
 
 int main() {
     struct Deque dq;
@@ -84,20 +146,20 @@ int main() {
         case 2:
             printf("Enter value to enqueue at rear: ");
             scanf("%d", &value);
-            // enqueueRear(&dq, value);
+            enqueueRear(&dq, value);
             break;
 
         case 3:
-            // dequeueFront(&dq);
+            dequeueFront(&dq);
             break;
 
         case 4:
-            // dequeueRear(&dq);
+            dequeueRear(&dq);
             break;
 
         case 5:
-            // printf("\nPeek Front: %d", peekFront(&dq));
-            // printf("\nPeek Rear: %d\n", peekRear(&dq));
+            printf("\nPeek Front: %d", peekFront(&dq));
+            printf("\nPeek Rear: %d\n", peekRear(&dq));
             break;
 
         case 6:
