@@ -28,6 +28,100 @@ node insert(node root, int data) {
     return root;
 }
 
+void inorder(node root) {
+    if (root != NULL) {
+        inorder(root->left);
+        printf("%d ", root->data);
+        inorder(root->right);
+    }
+}
+
+void preorder(node root) {
+    if (root != NULL) {
+        printf("%d ", root->data);
+        preorder(root->left);
+        preorder(root->right);
+    }
+}
+
+void postorder(node root) {
+    if (root != NULL) {
+        postorder(root->left);
+        postorder(root->right);
+        printf("%d ", root->data);
+    }
+}
+
+node search(node root, int value) {
+    if (root == NULL || root->data == value) return root;
+    if (value < root->data) return search(root->left, value);
+    return search(root->right, value);
+}
+
+int height(node root) {
+    if (root == NULL) return 0;
+    int leftHeight = height(root->left);
+    int rightHeight = height(root->right);
+
+    return 1 + (leftHeight > rightHeight ? leftHeight : rightHeight);
+}
+
+void levelorderTraversal(node root) {
+    if (root == NULL) return;
+
+    node queue[10];
+    int f=0, r=0;
+
+    queue[r++] = root;
+
+    printf("\nLevel Order Traversal: ");
+    while (f<r) {
+        node current = queue[f++];
+        printf("%d ", current->data);
+        if (current->left != NULL) queue[r++] = current->left;
+        if (current->right != NULL) queue[r++] = current->right;
+
+    }
+}
+
+node deleteNode(node root, int data) {
+    if (root == NULL) return root;
+
+    if (data < root->data) root->left = deleteNode(root->left, data);
+    else if (data > root->data) root->right = deleteNode(root->right, data);
+    else {
+        if (root->left == NULL) {
+            node temp = root->right;
+            free(root);
+            return temp;
+        } else if (root->right == NULL) {
+            node temp = root->left;
+            free(root);
+            return temp;
+        }
+    
+        node temp = root->right;
+        while(temp->left != NULL) {
+            temp = temp->left;
+        }
+
+        root->data = temp->data;
+        root->right = deleteNode(root->right, temp->data);
+    }
+    return root;
+}
+
+void findMinMax(node root, int* min, int* max) {
+    if (root == NULL) return;
+
+    if (root->data < *min) *min = root->data;
+    if (root->data > *max) *max = root->data;
+    
+
+    findMinMax(root->left, min, max);
+    findMinMax(root->right, min, max);
+}
+
 void printTree(node root, int space) {
     if (root == NULL) {
         return;
@@ -73,7 +167,7 @@ int main() {
                 root = insert(root, data);
                 break;
             
-            /*case 2:
+            case 2:
                 printf("\nInorder Traversal : ");
                 inorder(root);
                 printf("\n");
@@ -131,7 +225,7 @@ int main() {
                 printf("\nMinimum value in the tree: %d", min);
                 printf("\nMaximum value in the tree: %d\n", max);
                 system("pause");
-                break;*/
+                break;
 
             case 10:
                 printTree(root, 0);
