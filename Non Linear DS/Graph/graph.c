@@ -73,6 +73,59 @@ void dfs(int currentNode) {
     }
 }
 
+int findMinDistance(int dist[], int sptSet[]) {
+    int min = INT_MAX, minIndex;
+
+    for (int v = 0; v < numNodes; v++) {
+        if(sptSet[v] == 0 && dist[v] <= min) {
+            min = dist[v];
+            minIndex = v;
+        }
+    }
+    return minIndex;
+}
+
+void printPath(int parent[], int j) {
+    if (parent[j] == -1) {
+        return;
+    }
+    printPath(parent, parent[j]);
+    printf("%d -> ", j);
+}
+
+void dijkstra(int startNode)  {
+    int dist[MAX_NODES];
+    int sptSet[MAX_NODES];
+    int parent[MAX_NODES];
+
+    for (int i = 0; i < numNodes; i++) {
+        dist[i] = INT_MAX;
+        sptSet[i] = 0;
+        parent[i] = -1;
+    }
+
+    dist[startNode] = 0;
+
+    for (int count = 0; count < numNodes - 1; count++) {
+        int u = findMinDistance(dist, sptSet);
+
+        sptSet[u] = 1;
+
+        for (int v = 0; v < numNodes; v++) {
+            if (graph[u][v] && !sptSet[v] && dist[u] != INT_MAX && dist[u] + graph[u][v] < dist[v]) {
+                parent[v] = u;
+                dist[v] = dist[u] + graph[u][v];
+            }
+        }
+    }
+
+    for (int i = 0; i < numNodes; i++) {
+        printf("%d -> ", startNode);
+        printPath(parent, i);
+        printf("\b\b\b\b    \n");
+    }
+}
+
 int main() {
     int choice, startNode;
 
@@ -113,13 +166,11 @@ int main() {
                 dfs(startNode);
                 break;
 
-            /*
             case 4:
                 printf("Enter the starting node for Dijkstra's Algorithm: ");
                 scanf("%d", &startNode);
                 dijkstra(startNode);
                 break;
-            */
             
             case 0:
                 printf("Exiting program. GoodBye!\n");
@@ -161,6 +212,17 @@ BFS, DFS
 1 2 1
 0 3 1
 6 9 1
+-1 -1 -1
+
+for dijkstra
+
+0 1 4
+0 2 3
+1 2 1
+1 3 2
+2 3 4
+3 4 2
+4 5 6
 -1 -1 -1
 
 */
